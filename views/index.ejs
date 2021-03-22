@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="/file.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Christmas</title>
+    <!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<title>Virtual Christmas!</title>  
+<meta name="description" content= "Play an online Christmas game! Limited time event!" />
+<meta name="robots" content= "index, follow">
+<!-- jQuery and JS bundle w/ Popper.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Virtual Christmas!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+           
+              <% if (session) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/play">Play</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/inventory">Inventory</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/sell">Sell</a>
+              </li>
+      <% } else { %>
+        <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/create">Sign Up</a>
+            </li>
+              <% } %>
+                                    <li class="nav-item">
+              <a class="nav-link" href="/leaderboard">Leaderboard</a>
+            </li>
+                                    <li class="nav-item">
+                <a class="nav-link" href="/chat">GameChat</a>
+              </li>
+          </ul>
+           <% if (session) { %>
+           <ul class="navbar-nav">
+              <li class="nav-item dropdown pull-right">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%=uname%>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/logout">Log out</a>
+              </div>
+            </li>
+                  <% } %>
+      </ul>
+        </div>
+      </nav>
+      <h1 style="font-size: 7vw"><b>Welcome to Virtual Christmas!</h1>
+      <br>
+      <h2 style="font-size: 3vw">Virtual Christmas is a limited time Christmas challenge where you can get gifts, and sell it for money! The one who has the most money at the end of Christmas wins!</h6>
+      <br>
+      <% if (session) { %>
+        <h3>You are logged in as <b><%=uname%></b></h3><br>
+  <button class="btn btn-primary" onclick="location.href='/play'">
+    Play!
+  </button>
+
+    <button class="btn btn-secondary" onclick="location.href='/inventory'">
+    Inventory!
+  </button>
+
+  <button class="btn btn-success" onclick="location.href='/sell'">
+    Sell Your gifts!
+  </button>
+ 
+    <button class="btn btn-info" onclick="location.href='/leaderboard'">
+    Leaderboard!
+  </button>
+      <button class="btn btn-dark" onclick="location.href='/chat'">
+    In game chat!
+  </button>
+        <% } else { %>
+            <h3>You aren't logged in</h3>
+  <br>
+              <button class="btn btn-primary" onclick="location.href='/login'">
+    Login!
+  </button>
+  <br>
+             <button class="btn btn-info" onclick="location.href='/create'">
+    Sign Up!
+  </button>
+            <% } %>
+</body>
+</html>

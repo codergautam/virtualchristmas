@@ -1,0 +1,39 @@
+body  {
+  width: 100%;
+
+background-image: url("https://www.teahub.io/photos/full/6-66119_red-background-wallpaper-orange.jpg");
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  object-fit: cover;
+    background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+b,
+td,
+tr,
+th
+label{
+  color: white;
+}
+
+
+.leaderboardbg p {font-size: 32px;}
+.a {color: white;}
+.leaderboardbg {
+  /* Cryptos was here O_O */
+  background-color: #696969;
+  border-color: black;
+  border-size: 4px;
+  border-style: solid;
+  height: 650px;
+  overflow: auto;
+  width: 600px;
+}
