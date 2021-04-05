@@ -37,7 +37,7 @@ module.exports ={
     candy: candy,
    yee: (uname, authorization) => {
                    resolve({success: false, errormsg: "game is over"})
-                   /*
+                   
      var uname = uname.toLowerCase()
         return new Promise((resolve, reject) => {
             accounts.get(uname) 
@@ -87,6 +87,6 @@ module.exports ={
                resolve({success: false, errormsg: "This account doesn't exist"})
             })
         })
-        */
+        
         }
 } 
